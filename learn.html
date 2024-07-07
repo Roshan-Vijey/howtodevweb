@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <title>Learn every Tactics and Tricks | howtodevweb</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Neuton:wght@400;700&family=Lilita+One&family=Sono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f6f6f6;
+            overflow: auto;
+        }
+
+        .header {
+            display: flex;
+            background-color: white;
+        }
+
+        .logo{
+            width:40%;
+            color:#a4161a;
+            padding: 15px 0px 15px 65px;
+            font-family: "Russo One", sans-serif;
+            font-weight: 800;
+            font-style: normal;
+            font-size:45px;
+            word-spacing: -10px;
+        }
+
+        .logo a {
+            cursor: pointer;
+            color: #a4161a;
+            text-decoration: none;
+        }
+
+        .logo a:hover {
+            opacity: 0.5;
+        }
+
+        .menu{
+            position: absolute;
+            display: none;
+            font-family: FontAwesome;
+            font-weight: 100;
+            font-size: 23px; 
+            left:15px;
+            top:22px; 
+            color: black; 
+            cursor: pointer;
+        }
+
+        .menu:hover {
+            opacity: 0.5;
+        }
+
+        .sideflex {
+            display: none;
+            position: fixed;
+            background-color: whitesmoke;
+            display: none;
+            cursor:defaults;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.6;
+        }
+
+        .sidebar{
+            display:none;
+            position:absolute;
+            z-index:2;
+            background-color: #a4161a;
+            width:180px;
+            height:100%;
+        }
+
+        .sideabout , .sidearticle{
+            padding:15px 15px 15px 15px;
+            font-family: 'Roboto Slab', Arial, sans-serif;
+            font-size: medium;
+            font-weight: 400;
+        }
+
+        .close {
+            padding:15px 15px 10px 150px; 
+            font-size:larger;
+            font-weight:400;
+            color:white;
+        }
+
+        .close i {
+            cursor:pointer;
+        }
+
+        .close i:hover {
+            opacity : 0.5;
+        }
+
+        .sideabout a, .sidearticle a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .sideabout a:hover , .sidearticle a:hover {
+            opacity: 0.5;
+        }
+
+        .sideabout:hover , .sidearticle:hover {
+            background-color: #a4161a;
+        }
+
+        .search {
+            width:60%;
+            display: flex;
+            align-items: center;
+        }
+
+        .article{
+            width:20%;
+            color:#a4161a;
+            font-family: "Outfit", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size:20px;
+        }
+
+        .about {
+            width:20%;
+            color:#a4161a;
+            font-family: "Outfit", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size:20px;
+        }
+
+        .article a,.about a{
+            cursor: pointer;
+            text-decoration: none;
+            color: #a4161a;
+        }
+
+        .article a:hover, .about a:hover {
+            opacity:0.5;
+        }
+        .bar {
+            display:flex;
+            width:60%;
+            align-items:center;
+        }
+
+        .text {
+            background-color: white;
+            padding:8px 20px;
+            width: 81%;
+            border-top:1.2px solid #ccc;
+            border-bottom:1.2px solid #ccc;
+            border-left: 1.2px solid  #ccc;
+            border-right:none;
+            color:black;
+            font-family:"Bebas Neue" , sans-serif;
+            font-weight:400;
+            font-size: large;
+            outline: none;
+        }
+
+        .text::placeholder {
+            color:hsl(0,0%,80%);
+        }
+
+        .text:focus {
+            border-top:1.2px solid rgba(0, 0, 0, 0.7);
+            border-bottom:1.2px solid rgba(0, 0, 0, 0.7);
+            border-left: 1.2px solid  rgba(0, 0, 0, 0.7);
+            border-right:none;
+            background-color:hsl(0, 0%, 95%);
+        }
+
+        .text:focus + .button {
+            border-top: 1.2px solid rgba(0, 0, 0, 0.7);
+            border-bottom:1.2px solid rgba(0, 0, 0, 0.7);
+            border-right: 1.2px solid  rgba(0, 0, 0, 0.7);
+            border-left:none;
+            background-color:hsl(0, 0%, 95%);
+        }
+
+        .text:hover {
+            background-color:hsl(0, 0%, 95%);
+        }
+
+        .text:hover + .button {
+            background-color: hsl(0, 0%, 95%);
+        }
+
+        .button {
+            background-color: white;
+            cursor: pointer;
+            padding:8px 20px;
+            width:10%;
+            border-top:1.2px solid #ccc;
+            border-bottom:1.2px solid #ccc;
+            border-right: 1.2px solid  #ccc;
+            border-left:none;
+            font-family:"Bebas Neue" , sans-serif;
+            font-size: large;
+            outline: none;
+        }
+
+        .button i {
+            opacity:0.5;
+        }
+        .button i:hover{
+            opacity: 1;
+        }
+
+        .recent {
+            background-color: hsl(358, 76%, 36%);
+            position: relative;
+            color: white;
+            padding:10px 65px;
+            font-family: 'Roboto Slab', Arial, sans-serif;
+            font-size: 19px;
+            font-style: normal;   
+        }
+
+        .recent::after {
+            content:"";
+            position:absolute;
+            width:0px;
+            height:0px;
+            left:120px;
+            top:40px;
+            border-width:5px;
+            border-style:solid;
+            border-color:#f6f6f6;
+            transform:rotate(45deg);
+        }
+
+        .latest {
+            display:flex;
+            flex-wrap: wrap;
+            margin:10px 40px;
+        }
+        .topic1 {
+            display: flex;
+            flex-direction: column;
+            height:500px;
+            margin:10px 15px;
+            width:22.5%;
+            background-color:white;
+        }
+
+        .topic1 img{
+            width:100%;
+        }
+
+        .intro1{
+            font-family: "Neuton" , "Arial" , sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            font-style: normal;    
+            padding:10px 20px;  
+        }
+     
+        @media screen and (max-width:480px) and (min-width:250px) {
+        	.logo {
+            	font-size:35px;
+            }
+            .text, .button {
+            	font-size:medium;
+            }
+            .menu {
+            	top:15px;
+            }
+        }
+
+        @media screen and (max-width:760px) and (min-width:250px) {
+            .header {
+                flex-direction:column;
+            }
+            .article , .about {
+                display:none;
+            }
+            .logo , .search {
+                width:100%;
+                margin-top:1%;
+                margin-bottom:0.5%;
+            }
+            .logo {
+                padding:0px 0px;
+                text-align:center;
+            }
+            .search{
+                justify-content:center;
+                margin-bottom:2.5%;
+            }
+            .recent{
+                padding:10px 20px;
+            }
+            .recent::after {
+                left:78px;
+            }
+            .menu{
+                display:inline-block;
+            }
+        }
+
+        @media screen and (min-width:761px) and (max-width:900px) {
+            .logo{
+                width: 45%;
+                font-size:35px;
+                padding:15px 0px 15px 20px;
+            } 
+            .search {
+                width:55%;
+            }
+            
+            .about,.article,.text , .button {
+                font-size:18px;
+            }
+            
+            .recent {
+                padding:10px 20px;
+            }
+            
+            .recent::after {
+                left:80px;
+            }
+        }
+
+        @media screen and (min-width:900px) and (max-width:1100px) {
+
+            .logo{
+                width: 45%;
+                font-size:40px;
+                padding:15px 0px 15px 40px;
+            } 
+            .search {
+                width:55%;
+            }
+            
+            .about,.article,.text , .button {
+                font-size:19px;
+            }
+            
+            .recent {
+                padding:10px 40px;
+            }
+            
+            .recent::after {
+                left:98px;
+            }
+        }            
+    </style>
+</head>
+<body>
+    <div class = "sideflex"> </div>
+    <div class="sidebar">
+        <div class = "close">
+            <i class = "fa fa-close"></i>
+        </div>
+        <div class = "sidearticle">
+            <a href=""> Articles </a>
+        </div>
+        <div class="sideabout">
+            <a href=""> About </a>
+        </div>
+    </div>
+    
+    <div class="header">
+        <span class = "menu"> <i class="fa fa-bars"></i></span>
+        <div class="logo">
+            <a href="">how to dev web</a>
+        </div>
+        <div class="search">
+            <div class="article"><a href="">Articles</a></div>
+            <div class="about"><a>About</a></div>
+            <form class="bar">
+                <input class="text" type="text" placeholder="Search How to..">
+                <button class="button" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <div class="recent">Recent Articles</div>
+
+    <div class="latest">
+        <div class="topic1">
+            <div class="img1">
+                <img src="https://miro.medium.com/v2/resize:fit:1400/1*1uICdJa4B-NaSrRJ4JJHSw.png">
+            </div>
+            <div class="intro1">
+                Hosting dynamic websites can often be expensive, especially when compared to the numerous free options available for static sites like Netlify, Amazon Web Services, and Google Cloud.
+                <br> <br>
+                But what if I told you there's a platform that lets you host your dynamic website completely free of charge.
+            </div>
+        </div>
+        <div class="topic1">
+            <div class="img1">
+                <img src="https://miro.medium.com/v2/resize:fit:1400/1*1uICdJa4B-NaSrRJ4JJHSw.png">
+            </div>
+            <div class="intro1">
+                Flowcharts are an essential tool for organizing ideas and providing clear visual representations of processes and systems. In Figma, these visual aids become even more powerful, allowing for real-time collaboration and seamless integration into your design projects.
+            </div>
+        </div>
+        <div class="topic1">
+            <div class="img1">
+                <img src="https://miro.medium.com/v2/resize:fit:1400/1*1uICdJa4B-NaSrRJ4JJHSw.png">
+            </div>
+            <div class="intro1">
+                Flowcharts are an essential tool for organizing ideas and providing clear visual representations of processes and systems. In Figma, these visual aids become even more powerful, allowing for real-time collaboration and seamless integration into your design projects.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const inputField = document.querySelector('.text');
+            const placeholderText = inputField.placeholder;
+
+            const bar = document.querySelector('.bar');
+            const title = document.querySelector(".logo");
+            const search = document.querySelector(".search");
+            const logo = document.querySelector(".logo a");
+            const button = document.querySelector(".button");
+            const topics = document.querySelectorAll('.topic1');
+            const menu = document.querySelector(".menu");
+            const sidebar = document.querySelector(".sidebar");
+            const sideflex = document.querySelector(".sideflex");
+            const close = document.querySelector(".close i");
+
+            function hidePlaceholder() {
+                inputField.placeholder = '';
+            }
+
+            function showPlaceholder() {
+                if (inputField.value === '') {
+                    inputField.placeholder = placeholderText;
+                }
+            }
+
+            function adjustBarWidth() {
+                if (window.innerWidth <= 760) {
+                    bar.style.width = `${logo.offsetWidth}px`;
+                    button.style.width = "15%";
+                    inputField.style.width = "85%";
+                } else {
+                    bar.style.width = '60%';
+                    button.style.width = "10%";
+                    inputField.style.width = "81%";
+                    sideflex.style.display = "";
+                    sidebar.style.display = "";
+                    document.body.style.overflow = "";
+                }
+
+                topics.forEach(topic => {
+                    if (window.innerWidth > 1170) {
+                        const width = (document.body.clientWidth - 200) / 4;
+                        topic.style.width = `${width}px`;
+                    } 
+                    else if (window.innerWidth <= 1170 && window.innerWidth >= 930) {
+                        const width = (document.body.clientWidth - 170) / 3;
+                        topic.style.width = `${width}px`;
+                    }
+
+                    else if(window.innerWidth < 930 && window.innerWidth > 680 ) {
+                        const width = (document.body.clientWidth - 140) / 2;
+                        topic.style.width = `${width}px`;
+                    }
+                    else if (window.innerWidth <= 680 && window.innerWidth >=250) {
+                        topic.style.width = "100%";
+                    }
+                });    
+            }
+
+            function onclick() {
+                sideflex.style.display = "block";
+                sidebar.style.display = "block";
+                document.body.style.overflow = "hidden";
+            }
+
+            function closeclick() {
+                sideflex.style.display = "";
+                sidebar.style.display = "";
+                document.body.style.overflow = "";
+            }
+
+
+            adjustBarWidth();
+
+            inputField.addEventListener('focus', hidePlaceholder);
+            inputField.addEventListener('blur', showPlaceholder);
+            menu.addEventListener('click',onclick);
+            close.addEventListener('click',closeclick);
+
+            window.addEventListener('resize', adjustBarWidth);
+
+        };
+    </script>
+</body>
+</html>
+
+
+

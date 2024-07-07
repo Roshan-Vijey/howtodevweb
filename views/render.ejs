@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <title>Learn every Tactics and Tricks | howtodevweb</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&family=Russo+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Neuton:wght@400;700&family=Lilita+One&family=Sono:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="renderstyle.css">
+    </head>
+    <body>
+        <div class = "sideflex"> </div>
+        <div class="sidebar">
+            <div class = "close">
+                <i class = "fa fa-close"></i>
+            </div>
+            <div class = "sidearticle">
+                <a href=""> Articles </a>
+            </div>
+            <div class="sideabout">
+                <a href=""> About </a>
+            </div>
+        </div>
+        
+        <div class="header">
+            <span class = "menu"> <i class="fa fa-bars"></i></span>
+            <div class="logo">
+                <a href="/">how to dev web</a>
+            </div>
+            <div class="search">
+                <div class="article"><a href="">Articles</a></div>
+                <div class="about"><a>About</a></div>
+                <form class="bar">
+                    <input class="text" type="text" placeholder="Search How to..">
+                    <button class="button" type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class = "recent">
+            <a  class = "home" href="/"> Home </a>
+            <i class='fa fa-angle-right'></i>
+            <a href=""> Articles </a>
+            <i class='fa fa-angle-right'></i>
+            <a href=""> Hosting </a>
+            <i class='fa fa-angle-right'></i>
+            <a class = "current" href=""> How to host your dynamic website for free!</a>
+        </div>
+
+        <div class = "articles">
+            <div class = "heading"> How To Host Your Dynamic Website For Free! </div>
+        
+            <div class = "intro_container">
+
+                <div class = "introby">
+                    <div class ="board">
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/1*1uICdJa4B-NaSrRJ4JJHSw.png">
+                    </div>
+                    <div class = "intro1">
+                        <div class = "by">
+                            <div>ON:</div>
+                            <div>CATEGORY:</div>
+                            <div>DIFFICULTY:</div>
+                        </div>
+                        <div class ="credits">
+                            <div>1 JUL 2024</div>
+                            <div><a href="">HOSTING</a></div>
+                            <div><span>EASY</span></div>
+                        </div>
+                    </div>    
+                </div>
+
+
+                <div class ="intro">
+                    Hosting dynamic websites can often be expensive, especially when compared to the numerous 
+                    free options available for static sites like Netlify, Amazon Web Services, and Google Cloud.
+                    <br> <br> But what if I told you there's a platform that lets you host your dynamic website completely
+                    free of charge?<br>
+                    Yes, you heard that right! <strong>Render.com </strong> a remarkable 
+                    service that allows you to deploy your dynamic website at no cost. <br> <br>
+                    Imagine the possibilities: a professional, fully functional dynamic website, 
+                    live and online, without spending a single rupee.
+                    <br> <br>
+                    In this post, we'll dive into the fantastic offerings of Render, 
+                    break down the essentials of front-end and back-end design, 
+                    and walk you through the process of deploying your dynamic website on Render. <br> <br>
+                    Get ready to unlock the full potential of free dynamic web hosting!
+                </div>
+            </div>
+
+            <div class = "backend">
+                <h2> Backend Design with Node.js and Express.js </h2>
+                <div class ="backend_intro">
+                    In this section, we'll walk through the process of setting up a server using Node.js and 
+                    Express, one of the most popular frameworks for building web applications. 
+                    Follow these steps to create your first server.
+                </div>
+                <div class = "step">
+                    <h3> 
+                        <div>
+                            <i class= "fa fa-dot-circle-o" style="font-size:20px"></i> 
+                        </div>
+                        <div>
+                            Create a directory and Open VSCode
+                        </div>
+                    </h3>
+                    <ol type ="1">
+                        <li> 
+                            On Windows, launch a Windows command prompt (Enter <strong> Windows command prompt </strong> command prompt in the Windows search bar). 
+                            On macOS and Linux, you can enter these commands in the terminal.
+                        </li>
+                        <li>
+                            Now run the following commands one after the other. Fisrt we are changing our directory to desktop. Then at desktop directory we are creating a folder named <strong>my-first-website</strong> in desktop.
+                            Then we again changing our directory to my-first-website folder. Inside the folder we are opening VSCode.
+                            <div class = "code">
+                                cd desktop <br>
+                                mkdir my-first-website <br>
+                                cd my-first-website <br>
+                                code .
+                            </div>
+                            <br>
+                            The <strong> "code ."</strong> command opens VS Code in the current working folder, which becomes 
+                            your workspace. Accept the Workspace Trust dialog by selecting 
+                            Yes, I trust the authors since this is a folder you created.
+                        </li>
+                    </ol>
+                        <h3> 
+                            <div>
+                                <i class= "fa fa-dot-circle-o" style="font-size:20px"></i> 
+                            </div>
+                            <div>
+                                Install Package.json and Dependencies
+                            </div>
+                    </h3>
+                    <ol type ="1">
+                        <li> 
+                            Once VSCode opened you will find the <strong> my-first-website </strong> folder under the 
+                            Explorer tab. Now open a new VSCode terminal window using shortcut keys ( <span> Ctrl+Shift+` </span> )    
+                        </li>
+                    </ol>
+                    <div class = "snip">
+                        <img src="vscode open.png">
+                    </div>
+                    <ol type="2">
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            window.onload = function() {
+                const inputField = document.querySelector('.text');
+                const placeholderText = inputField.placeholder;
+    
+                const bar = document.querySelector('.bar');
+                const title = document.querySelector(".logo");
+                const search = document.querySelector(".search");
+                const logo = document.querySelector(".logo a");
+                const button = document.querySelector(".button");
+                const topics = document.querySelectorAll('.topic1');
+                const menu = document.querySelector(".menu");
+                const sidebar = document.querySelector(".sidebar");
+                const sideflex = document.querySelector(".sideflex");
+                const close = document.querySelector(".close i");
+                const current = document.querySelector(".current");
+                const intro_container = document.querySelector(".intro_container");
+                const introby = document.querySelector(".introby");
+    
+                function hidePlaceholder() {
+                    inputField.placeholder = '';
+                }
+    
+                function showPlaceholder() {
+                    if (inputField.value === '') {
+                        inputField.placeholder = placeholderText;
+                    }
+                }
+    
+                function adjustBarWidth() {
+                    if (window.innerWidth <= 760) {
+                        bar.style.width =  `${logo.offsetWidth}px`;
+                        button.style.width = "15%";
+                        inputField.style.width = "85%";
+                    } else {
+                        bar.style.width = '60%';
+                        button.style.width = "10%";
+                        inputField.style.width = "81%";
+                        sideflex.style.display = "";
+                        sidebar.style.display = "";
+                        document.body.style.overflow = "";
+                    }
+
+                    const width = current.offsetWidth / 2;
+                    current.style.setProperty("--after-left",`${width}px`);
+                }
+    
+                function onclick() {
+                    sideflex.style.display = "block";
+                    sidebar.style.display = "block";
+                    document.body.style.overflow = "hidden";
+                }
+    
+                function closeclick() {
+                    sideflex.style.display = "";
+                    sidebar.style.display = "";
+                    document.body.style.overflow = "";
+                }
+
+                adjustBarWidth();
+    
+                inputField.addEventListener('focus', hidePlaceholder);
+                inputField.addEventListener('blur', showPlaceholder);
+                menu.addEventListener('click',onclick);
+                close.addEventListener('click',closeclick);
+    
+                window.addEventListener('resize', adjustBarWidth);
+    
+            };
+        </script>
+    </body>
+
+</html>
